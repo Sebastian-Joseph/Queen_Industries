@@ -272,14 +272,14 @@ public class Company {
         System.out.println();
     }
 
-    private void printOrganizationChart() {
+    public void printOrganizationChart() {
         System.out.println();
         if (staff.size() > 0) {
             System.out.println("Queen Industries Organization Chart");
             sortStaff();
             for (Employee director : staff) {
                 System.out.println(" - " + director.getName() + ", " + director.getTitle());
-                for (Employee manager: ((Director) director).getManagers()) {
+                for (Employee manager : ((Director) director).getManagers()) {
                     if (manager.getTier() <= 1) {
                         System.out.println("   - " + manager.getName() + ", " + manager.getTitle());
                     } else {
